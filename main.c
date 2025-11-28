@@ -1,9 +1,10 @@
-#include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "file.h"
+#include "image.h"
 
 int main() {
-   printf("Hello, World!\n");
+    char* filename = FILE_NAME;
+    open_file(filename);
+
+    printf("Hello, World!\n");
     return 0;
 }
