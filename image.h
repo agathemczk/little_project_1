@@ -4,15 +4,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 #define IMAGE_SIGNATURE "P6\0"
-#define IMAGE_WIDTH 3000
-#define IMAGE_HEIGHT 3000
-#define IMAGE_INTENSITY 255
+#define IMAGE_WIDTH 600
+#define IMAGE_HEIGHT 400
+#define IMAGE_INTENSITY "255\0"
 
 #define BLUE_RED 65
 #define BLUE_GREEN 108
 #define BLUE_BLUE 163
+
+#define CIRCLE_RED 186
+#define CIRCLE_GREEN 137
+#define CIRCLE_BLUE 74
+#define CIRCLE_RADIUS 100
 
 typedef struct {
     unsigned char r;
@@ -33,7 +39,8 @@ typedef struct {
 } Pixmap;
 
 void set_pixel(Pixmap *pixmap, int x, int y, unsigned char r, unsigned char g, unsigned char b);
-void create_pixmap(Pixmap *pixmap, int width, int height, int intensity);
+void create_pixmap(Pixmap *pixmap, int width, int height);
 void delete_pixmap(Pixmap *pixmap);
+void draw_circle(Pixmap *pixmap, int center_x, int center_y, int radius, unsigned char r, unsigned char g, unsigned char b);
 
 #endif
