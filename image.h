@@ -6,9 +6,9 @@
 #include <string.h>
 
 #define IMAGE_SIGNATURE "P6\0"
-#define IMAGE_WIDTH "10\0"
-#define IMAGE_HEIGHT "10\0"
-#define IMAGE_INTENSITY "255\0"
+#define IMAGE_WIDTH 3000
+#define IMAGE_HEIGHT 3000
+#define IMAGE_INTENSITY 255
 
 #define BLUE_RED 65
 #define BLUE_GREEN 108
@@ -33,7 +33,7 @@ typedef struct {
 } Pixmap;
 
 void set_pixel(Pixmap *pixmap, int x, int y, unsigned char r, unsigned char g, unsigned char b);
-void create_pixmap(Pixmap *pixmap, int width, int height);
+void create_pixmap(Pixmap *pixmap, int width, int height, int intensity);
 void delete_pixmap(Pixmap *pixmap);
 
 #endif

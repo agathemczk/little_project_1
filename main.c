@@ -4,7 +4,7 @@
 int main() {
 
     Pixmap pixmap;
-    create_pixmap(&pixmap, 10, 10);
+    create_pixmap(&pixmap, IMAGE_WIDTH, IMAGE_HEIGHT, IMAGE_INTENSITY);
 
     save_ppm(FILE_NAME, &pixmap);
     delete_pixmap(&pixmap);

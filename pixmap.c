@@ -1,11 +1,10 @@
 #include "image.h"
 
-void create_pixmap(Pixmap *img, int width, int height) {
+void create_pixmap(Pixmap *img, int width, int height, int intensity) {
     strcpy(img->signature, IMAGE_SIGNATURE);
     sprintf(img->width, "%d", width);
     sprintf(img->height, "%d", height);
-    strcpy(img->intensity, IMAGE_INTENSITY);
-
+    sprintf(img->intensity, "%d", intensity);
     img->pixel = malloc(sizeof(Pixel) * width * height);
 
     for (int i = 0; i < width * height; i++) {
