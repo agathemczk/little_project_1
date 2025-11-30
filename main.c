@@ -2,9 +2,13 @@
 #include "image.h"
 
 int main() {
-    char* filename = FILE_NAME;
-    open_file(filename);
 
-    printf("Hello, World!\n");
+    Pixmap pixmap;
+    create_pixmap(&pixmap, 10, 10);
+
+    save_ppm(FILE_NAME, &pixmap);
+    delete_pixmap(&pixmap);
+
+    printf("ok\n");
     return 0;
 }

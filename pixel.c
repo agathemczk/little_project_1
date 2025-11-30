@@ -1,19 +1,10 @@
 #include "image.h"
 
-void create_pixel(Pixel *pixel, unsigned char R, unsigned char G, unsigned char B) {
-    pixel->r = R;
-    pixel->g = G;
-    pixel->b = B;
-}
+void set_pixel(Pixmap *pixmap, int x, int y, unsigned char R, unsigned char G, unsigned char B) {
+    int w = atoi(pixmap->width);
 
-void delete_pixel(Pixel *pixel) {
-    
-}
-
-void display_pixel(Pixel *pixel) {
-   
-}
-
-void input_pixel(Pixel *pixel) {
-   
+    int index = y * w + x;
+    pixmap->pixel[index].r = R;
+    pixmap->pixel[index].g = G;
+    pixmap->pixel[index].b = B;
 }
