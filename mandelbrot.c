@@ -1,7 +1,6 @@
 #include "image.h"
 
 int convergence(double x, double y) {
-    Complex z = {x, y};
     Complex u = {0.0, 0.0};
     Complex c = {x, y}; 
 
@@ -31,18 +30,18 @@ int convergence(double x, double y) {
     }
 }
 
-void draw_mandelbrot(Pixmap *pixmap) {
-    int width = IMAGE_WIDTH;
-    int height = IMAGE_HEIGHT;
+void draw_mandelbrot(Pixmap *pixmap, double x_min, double y_max, double x_max, double y_min) {
+    int width = atoi(pixmap->width);
+    int height = atoi(pixmap->height);
 
-    double x_scale = (X_MAX - X_MIN) / width;
-    double y_scale = (Y_MAX - Y_MIN) / height;
-
+    double x_scale = (x_max - x_min) / width;
+    double y_scale = (y_max - y_min) / height;
+    
     for (int y_pixel = 0; y_pixel < height; y_pixel++) {
         for (int x_pixel = 0; x_pixel < width; x_pixel++) {
 
-            double x0 = X_MIN + x_pixel * x_scale;
-            double y0 = Y_MAX - y_pixel * y_scale;
+            double x0 = x_min + x_pixel * x_scale;
+            double y0 = y_max - y_pixel * y_scale;
 
             int c = convergence(x0, y0);
             unsigned char r,g,b;

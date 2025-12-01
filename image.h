@@ -30,6 +30,13 @@
 #define Y_MIN -1.0 //y2
 #define MAX_ITERATIONS 85
 
+#define NUM_FRAMES 10
+#define ZOOM_TARGET_X -0.99
+#define ZOOM_TARGET_Y 0.3
+#define BASE_FILE_NAME "im"
+#define FILE_EXTENSION ".ppm"
+#define FINAL_RANGE_X 0.005
+
 typedef struct {
     unsigned char r;
     unsigned char g;
@@ -60,6 +67,9 @@ void delete_pixmap(Pixmap *pixmap);
 
 void draw_circle(Pixmap *pixmap, int center_x, int center_y, int radius, unsigned char r, unsigned char g, unsigned char b);
 int convergence(double x, double y);
-void draw_mandelbrot(Pixmap *pixmap);
+void draw_mandelbrot(Pixmap *pixmap, double x_min, double y_max, double x_max, double y_min);
+
+double lerp(double a, double b, double t) ;
+void generate_zoom_series(Pixmap *pixmap);
 
 #endif
