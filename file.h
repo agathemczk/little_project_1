@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include "image.h"
 
-#define FILE_NAME "image.ppm"
+#define FILE_NAME "mandelbrot.ppm"
 
 void save_ppm(char* file_name, Pixmap *pixmap);
 
